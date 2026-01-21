@@ -1,0 +1,227 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BASE */
+body {
+    background: #0b0b0b;
+    color: #f2f2f2;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 80px 20px;
+}
+
+/* HERO */
+.hero {
+    max-width: 700px;
+    margin-bottom: 80px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: #cfcfcf;
+    line-height: 1.6;
+}
+
+/* WRAPPER */
+.carousel-wrapper {
+    margin-top: 60px;
+}
+
+/* CAROUSEL + FADE LATERAL */
+.carousel {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: visible;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    -webkit-mask-image: linear-gradient(to right,
+            transparent 0%,
+            black 8%,
+            black 92%,
+            transparent 100%);
+
+    mask-image: linear-gradient(to right,
+            transparent 0%,
+            black 8%,
+            black 92%,
+            transparent 100%);
+}
+
+/* TRACK */
+.carousel-track {
+    display: flex;
+    gap: 40px;
+    transition: transform 0.6s ease;
+    will-change: transform;
+    padding: 20px 0;
+}
+
+/* VIDEO CARD — LIQUID CRYSTAL */
+.video-card {
+    min-width: 75%;
+    border-radius: 28px;
+    padding: 20px;
+
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.5),
+        0 30px 80px rgba(0, 0, 0, 0.45);
+
+    color: #111;
+
+    opacity: 0.35;
+    transform: scale(0.85);
+    transition: all 0.6s ease;
+}
+
+/* CARD ACTIVA */
+.video-card.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* VIDEO */
+.video-card iframe {
+    width: 100%;
+    height: 420px;
+    border-radius: 18px;
+    margin-bottom: 16px;
+
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.25),
+        0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* TEXTO */
+.note {
+    font-size: 0.95rem;
+    color: #222;
+    line-height: 1.55;
+}
+
+/* LIQUID GLASS ARROWS */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.35),
+        0 12px 30px rgba(0, 0, 0, 0.45);
+
+    color: #ffffff;
+    font-size: 26px;
+
+    cursor: pointer;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.arrow.left {
+    left: 24px;
+}
+
+.arrow.right {
+    right: 24px;
+}
+
+.arrow:hover {
+    background: rgba(255, 255, 255, 0.22);
+    box-shadow:
+        inset 0 1px 2px rgba(255, 255, 255, 0.45),
+        0 18px 45px rgba(0, 0, 0, 0.55);
+    transform: translateY(-50%) scale(1.12);
+}
+
+.arrow:active {
+    transform: translateY(-50%) scale(1.03);
+}
+
+/* DOTS — LIQUID GLASS */
+.dots {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 40px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(8px) saturate(140%);
+    -webkit-backdrop-filter: blur(8px) saturate(140%);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.35),
+        0 4px 10px rgba(0, 0, 0, 0.35);
+
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: rgba(255, 255, 255, 0.35);
+    transform: scale(1.25);
+}
+
+/* FOOTER */
+.footer {
+    margin-top: 120px;
+    border-top: 1px solid #222;
+    padding-top: 40px;
+    color: #aaa;
+    max-width: 600px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .video-card iframe {
+        height: 240px;
+    }
+
+    .video-card {
+        min-width: 90%;
+    }
+}
